@@ -14,7 +14,7 @@ function dec(){
         setCount(count-1)
     }
     function reset(){
-        setCount(count)
+        setCount(0)
     }
 
     return <div>
