@@ -13,12 +13,17 @@ function Counter() {
 function dec(){
         setCount(count-1)
     }
+    function reset(){
+        setCount(count)
+    }
 
     return <div>
 
     <h1>Counter:{count}</h1>
     <button onClick={inc}>Inc</button>
     <button onClick={dec}>Dec</button>
+    <button onClick={reset}>Reset</button>
+
 
     </div>
 }
