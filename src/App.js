@@ -4,8 +4,13 @@ import Counter from './counter';
 
 function App() {
   return (
+    <div className='a'>
     <div className="App">
-     <Counter/>
+     <h1>score</h1>
+    <Counter cname="india">  </Counter>
+    <Counter cname="australia">  </Counter>
+  
+    </div>
     </div>
   );
 } 
