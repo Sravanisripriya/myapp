@@ -1,22 +1,23 @@
 import React, { useRef } from "react";
+import Todos from "./todos.jsx"
 
-function Todolist(){
+function Todolist(){  
+  var [task,setTask]=React.useState(["arya","anu","renu","imran","munnu"]) 
+  var[newtask,setNewtask]=React.useState("")          
     let empty=useRef()
-    let [strike,setStrike]=React.useState(false)
-    var [task,setTask]=React.useState([])
-    var[newtask,setNewtask]=React.useState("")
+    
+    
       function add(){
          setTask([...task,newtask])
          empty.current.value=""
-      }
-      function del(index){
-          var temp=[...task]
-        temp.splice(index,1)
-        setTask([...temp])
-      }
-      const done=(index)=>{
        
       }
+      var del=React.useCallback((index)=>{
+          var temp=[...task];
+        temp.splice(index,1);
+        setTask([...temp])
+      },[])
+      
     return(
         <div>
             <h1>TODOLIST</h1>
@@ -25,10 +26,10 @@ function Todolist(){
             <ul>
             {task.map((todos,i)=>{
                 return(
-                    <li style={strike?{textDecoration:"line-through"}:{}}>{todos}
-                    <button onClick={()=>{del(i)}}>Delete</button>
-                    <button onClick={()=>{done(i)}}>Done</button>
-                    </li>
+                  <div>
+                       <Todos t={todos} index={i} del={del}></Todos>
+                  </div>
+                    
                 )
             })}
             </ul>
@@ -36,7 +37,9 @@ function Todolist(){
         </div>
     )}
 
-    export default Todolist
+    export default  React.memo(Todolist)
+
+    
     
 
 
