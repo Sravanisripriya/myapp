@@ -1,5 +1,6 @@
 import React from "react";
-import axios from 'axios';
+import axios from "axios";
+import CartItem from "./cart item";
 
 
 function Cart() {
@@ -38,23 +39,14 @@ function Cart() {
     return (
         <div className="mybox">
                 <h1 style={{textAlign:"center", color:"brown"}}>Cart</h1>
+
                 <ul className="cartlist">
                 {
                     items?.map((item)=>{
-                        return <li className="cartItem">
-                            <img src={item.thumbnail}/>
-                            <b class="itemtitle">{item.title}</b>
-                            <b class="itemprice">price:{item.price}</b>
-                            <div>
-                                <button onClick={()=>{inc(item)}}>+</button>
-                                <b>{item.quantity}</b>
-                                <button onClick={()=>{dec(item)}}>-</button>
-                            </div>
-                            <b class="itemTotal">Rs:{item.price*item.quantity}</b>
-                            </li>
+                        return<CartItem item={item} inc={inc} dec={dec}></CartItem>
                     })
                 }
-                <h1 class="itemstotal">Total{items.reduce((sum,item)=>{
+                <h1 class="itemstotal">Total{items?.reduce((sum,item)=>{
                     return sum+(item.quantity*item.price)
                 },0)}</h1>
                 </ul>
