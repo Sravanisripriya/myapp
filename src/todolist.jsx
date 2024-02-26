@@ -43,7 +43,7 @@ console.log(inp)
   }
   
   return(  
-    <div>
+    <div className="mybox">
     <input type="text"  ref={inp} onKeyUp={(e)=>{checkEnter(e)}}/>
     <button onClick={()=>{add()}}>Add</button>
    
