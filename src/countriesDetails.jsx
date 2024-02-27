@@ -10,7 +10,6 @@ import axios from "axios";
         setCountryDetails(res.data[0])
      })
     },[cparams])
-    
 return(
     <div className="border border-3 border-danger p-3">
         {
