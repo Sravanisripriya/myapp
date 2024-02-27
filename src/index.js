@@ -8,22 +8,29 @@ import {createBrowserRouter, RouterProvider,} from "react-router-dom";
 import Counter from './counter';
 import Todo from './todos';
 import Countries from "./countries"
+import CountryDetails from './countriesDetails';
 const router = createBrowserRouter([
   {
     path: "/",
-    element:<App />,
+    element:<App/>,
     children:[
       {
-        path:"counter",
+        path:'counter',
         element:<Counter></Counter>
       },
       {
-        path:"todos",
+        path:'todos',
         element:<Todo></Todo>
       },
       {
-        path:"countries",
-        element:<Countries></Countries>
+        path:'countries',
+        element:<Countries></Countries>,
+        children:[
+          {
+            path:'details/:cname',
+            element:<CountryDetails></CountryDetails>
+          }
+        ]
       }
     ]
   },
