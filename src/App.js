@@ -8,6 +8,7 @@ function App() {
     <h1>karimulla</h1>
     <Link to="/counter">counter</Link> &nbsp; &nbsp;
     <Link to="/todos">todos</Link>
+    <Link to="/countries">countries</Link>
      <Outlet></Outlet>
     </div>
   );

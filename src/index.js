@@ -7,18 +7,23 @@ import reportWebVitals from './reportWebVitals';
 import {createBrowserRouter, RouterProvider,} from "react-router-dom";
 import Counter from './counter';
 import Todo from './todos';
+import Countries from "./countries"
 const router = createBrowserRouter([
   {
     path: "/",
     element:<App />,
     children:[
       {
-        path:"/counter",
+        path:"counter",
         element:<Counter></Counter>
       },
       {
-        path:"/todos",
+        path:"todos",
         element:<Todo></Todo>
+      },
+      {
+        path:"countries",
+        element:<Countries></Countries>
       }
     ]
   },
@@ -35,3 +40,4 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+ 
