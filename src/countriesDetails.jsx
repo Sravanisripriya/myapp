@@ -9,7 +9,7 @@ import axios from "axios";
      axios.get(`https://restcountries.com/v3.1/name/${cparams.cname}?fullText=true`).then((res)=>{
         setCountryDetails(res.data[0])
      })
-    },[cparams])
+    },[cparams]) 
 return(
     <div className="border border-3 border-danger p-3">
         {
@@ -19,7 +19,6 @@ return(
                 <img src={countryDetails.flags.png}/>
             </div>
        }
-
  </div>
   
 )}
