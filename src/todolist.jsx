@@ -45,8 +45,8 @@ console.log(inp)
     <div>
     <div className="header">
        <h1>MY TODOLIST</h1>
-    <input type="text" placeholder="Title" ref={inp} onKeyUp={(e)=>{checkEnter(e)}} id="inp"/>
-    <button onClick={()=>{add()}} id="btn">ADD</button>
+     <input type="text" placeholder="Title" ref={inp} onKeyUp={(e)=>{checkEnter(e)}} id="inp"/>
+     <button onClick={()=>{add()}} id="btn">ADD</button>
     </div>
     {
       task.map((etask,i)=>{
@@ -56,8 +56,6 @@ console.log(inp)
 
     </div>
   )}
-
-
     export default  React.memo(Todolist)
 
     
