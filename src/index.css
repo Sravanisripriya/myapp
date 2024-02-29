@@ -1,7 +1,40 @@
-.mybox{
-  padding:10px;
-  margin:10px;
-  border:2px solid;
-  border-radius:10px;
-  background-color: darkkhaki;
+.header{
+  padding:65px 100px;
+  color:whitesmoke;
+  text-align:center;
+  background-color:hsla(300, 14%, 1%, 0.961);
 }
+
+#inp{
+  margin:0;
+  border:none;
+  border-radius:10px;
+  width: 80%;
+  padding: 10px;
+  float: left;
+  font-size: 18px;
+  color:black
+}
+#btn {
+  padding: 10px;
+  width: 20%;
+  background: #a7e0f4;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  border-radius:10px;
+}
+.list:nth-child(odd) {
+  background: #fff;
+}
+.list{
+  list-style-type: none;
+  padding:12px;
+  background:#eee;
+  font-size: 22px;
+  color:black;
+ padding:0;
+ margin:0;
+ border-radius:10px
+}
+
