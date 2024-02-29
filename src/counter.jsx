@@ -21,12 +21,8 @@ function dec(){
     <button onClick={inc}>Inc</button>
     <button onClick={dec}>Dec</button>
     <button onClick={reset}>Reset</button>
-
-
-
     </div>
 }
-
 export default Counter;
 
 
