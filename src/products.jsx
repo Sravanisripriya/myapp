@@ -33,9 +33,9 @@ function Products(){
                   return(
                    
                         <div className="card  m-4 " style={{width:"200px"}}  >
-                        <img src={product.image} class="card-img-top" id="img" />
+                        <center><img src={product.image} class="card-img-top" id="img" /></center>
                         <div class="card-body d-flex flex-column justify-content-between" >
-                            <h4 class="card-title">{product.title}</h4>
+                            <h5 class="card-title">{product.title}</h5>
                             <p class="card-text"><small class="text-body-secondary">{product.category}</small></p>
                             <button className="btn btn-primary" onClick={()=>{addToCart(product)}}>Add to cart</button>
                         </div>
