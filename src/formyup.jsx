@@ -2,41 +2,28 @@ import React from "react";
 import { useFormik } from "formik";
 import * as  Yup from 'yup'
 
-function checkForm(values){                  
-// console.log("checkForm::",values)         
-var error={};                                    
-if(!values.Fname){
-   error.Fname='Requried'
-}                                          
-if(!values.Password){                          
-    error.Password='Required'                    
-}                                                 
-if(!values.Email){
-    error.Email='Required'
-}
-if(!values.Contact){
-    error.Contact='Required'
-}
-return error
-}
-
-
-function Form(){
+function Formyup(){
     var formik=useFormik({
         initialValues:{
             Fname:'',
             Lname:'',
-            Password:'',
+            Password:'', 
             Email:'',
             Contact:''
         },
         onSubmit:(values)=>{console.log(values)},
-        validate:checkForm
+        validationSchema:Yup.object({
+            Fname:Yup.string().min(3,'too small').max(15,'too big').required('firstname is required'),
+             Password:Yup.string().required('password is required'),
+            Contact:Yup.string().min(2,'valid').max(10,'too big').required('number is required'),
+        })
+       
     })
     //  console.log(formik.touched) -shows error msg  in error property
 return(
     <div  className='border border-2 border-danger p-5 m-2'>
-        <h1> REGISTRATION FORM(if condition)</h1>
+        <h1> REGISTRATION FORM With YUP</h1>
+
         <form onSubmit={formik.handleSubmit}>
 
         <label>FirstName:</label>
@@ -62,4 +49,4 @@ return(
     </div>
 )}
 
-export default Form
+export default Formyup
