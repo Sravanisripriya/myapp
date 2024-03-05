@@ -10,7 +10,7 @@ return(
         initialValues={{
             Fname:'',
             Lname:'',
-            Password:'',
+            Password:'', 
             Email:'',
             Contact:''
         }}
