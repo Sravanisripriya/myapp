@@ -1,6 +1,7 @@
 body {
     margin:0;
     margin-top:4%;
+    
 
 }
 .main{
@@ -8,5 +9,35 @@ body {
     display:flex;
     flex-wrap:wrap;
     justify-content:space-around;
-     padding:50px 10px 286px
+     padding:40px 10px 230px
 }
+#btn{
+    position:absolute;
+    left:45%;
+    bottom:25%;
+    border-radius:10px;
+    width:13%;
+    height:40px;
+    background-color: rgb(58, 14, 218);
+    border:0px;
+    color:white
+}
+#radio{
+    position:absolute;
+    right:65%;
+    top:47% 
+}
+#btnenq{
+    position:absolute;
+    top: 25px;
+    right: 60px;
+    border:0px;
+    background-color: rgb(58, 14, 218);
+    color:white;
+    width:9%;
+    height:35px;
+    border-radius: 10px;
+}
+
+
+

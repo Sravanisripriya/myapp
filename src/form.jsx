@@ -7,11 +7,11 @@ function Form(){
     return (
        <div className="main">
             <div className="enq">
-            <h1>ENQUIRY FORM</h1>
+            <h1>ENQUIRY FORM</h1>&nbsp;&nbsp;
             <form>
-            <input type="text" placeholder="Name" name='name' class="form-control"/>&nbsp;&nbsp;
-            <input type="text" placeholder="Phone Number" name='num' class="form-control"/><br/><br/>
-            <input type="text" placeholder="Email" name='email' class="form-control"/>
+            <input type="text" placeholder="Name" name='name'  class="form-control" />&nbsp;
+            <input type="text" placeholder="Phone Number" name='num'  class="form-control" />&nbsp;
+            <input type="text" placeholder="Email" name='email'  class="form-control" />&nbsp;-
           
             <h4>COURSE</h4>
             <input type='checkbox' name='angular'/>&nbsp;
@@ -31,19 +31,19 @@ function Form(){
           
             <input type='checkbox' name='devops'/>&nbsp;
             <label>Devops</label>
-
+           <div id='radio'>
            <h4>MODE</h4>
             <input type='radio' name='Off'/>&nbsp;
             <label>Offline</label><br/>
 
             <input type='radio' name='On'/>&nbsp;
             <label>Online</label>
-
+            </div> 
             </form>
             </div>
          
           <div className="feed">
-            <h1>FEEDBACK</h1>
+            <h1>FEEDBACK</h1>&nbsp;&nbsp;
             <input type='date' name='date'/>&nbsp;&nbsp;
 
             {/* <label>interest</label> */}
@@ -55,14 +55,12 @@ function Form(){
             
             <textarea>Remarks</textarea><br/><br/>
             <input type='date' name='date'/>
-          
-            <button >Save</button>
+            <button id="btn">Save</button>
+
+            <button id="btnenq">All Enquiries</button>
             
           </div>
-         
-   
     </div>
         
     )}
-
 export default Form
