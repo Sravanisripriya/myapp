@@ -4,10 +4,14 @@ import { useFormik } from "formik"
 
 function Form(){
     var formik=useFormik
+
+    onSubmit:{()=>{console.log()}}
     return (
        <div className="main">
             <div className="enq">
             <h1>ENQUIRY FORM</h1>&nbsp;&nbsp;
+          
+           
             <form>
             <input type="text" placeholder="Name" name='name'  class="form-control" />&nbsp;
             <input type="text" placeholder="Phone Number" name='num'  class="form-control" />&nbsp;
@@ -55,7 +59,7 @@ function Form(){
             
             <textarea>Remarks</textarea><br/><br/>
             <input type='date' name='date'/>
-            <button id="btn">Save</button>
+            <button id="btn" type="submit">Save</button>
 
             <button id="btnenq">All Enquiries</button>
             
