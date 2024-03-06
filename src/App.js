@@ -1,15 +1,14 @@
 
 import './App.css';
 import Form from './form';
-import FormDetails from './jjj';
+import Nav from './nav';
 
 
 function App() {
   return (
     <div className="App">
       <Form></Form>
-      <FormDetails></FormDetails>
-     
+      <Nav></Nav>
     </div>
   );
 }

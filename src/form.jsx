@@ -4,101 +4,126 @@ import * as Yup from 'yup'
 
 
 function Form(){
-    var formik=useFormik({
+    let formik=useFormik({
    initialvalues:{
-    Name:'',
+    name:'',
     num:'',
     email:'',
-    course:[],
+    courses:[],
     mode:'',
     date:'',
-    int:'',
+    options:'',
     remarks:'',
-    calldate:''
+    ncd:''
    },
-
-   onSubmit:(values)=>{console.log('onSubmit',values)},
-
    validationSchema:Yup.object({
-    Name:Yup.string().min(2,'not valid').max(15,'valid').required('please enter name'),
-    num:Yup.string().min(2,'not valid').max(10,'valid').required('please enter num'),
-    email:Yup.string().min(2,'not valid').max(10,'valid').required('please enter email'),
-    course:Yup.array().min(1,'please select one').required('atleast one Required')
-   })
+    name:Yup.string().min(2,'not valid').max(15,'valid').required('please enter name'),
+    num:Yup.string().min(2,'not valid').max(10,'valid').required('please enter number'),
+    email:Yup.string().required('please enter email'),
+    courses:Yup.array().min(1,'please select one'),
+    mode:Yup.string().required(),
+    data:Yup.string().required(),
+    remarks:Yup.string().required(),
+    options:Yup.string().required(),
+    ncd:Yup.string().required(),
+   }),
+   onSubmit:(values)=>{
+    console.log(values)}  
     })
-
-
-    
-    
     return (
-       <div className="main">
-            <div className="enq">
-            <h1>ENQUIRY FORM</h1>&nbsp;&nbsp;
-            <form  onSubmit={formik.handleSubmit}>
-              
-            <label className="text-primary">Name :</label>
-            <input type="text" placeholder="Name" name='Name'  class="form-control" onChange={formik.handleChange} onBlur={formik.handleBlur} />&nbsp;
-            <div>{formik.touched.Name && formik.errors.Name}</div>
+  <div className="main">
+  <form  onSubmit={formik.handleSubmit}> 
+      <div className="enq">
+      <div className="leftside">
+              <h1 className="text-center p-4 text-primary">ENQUIRY FORM</h1>
+               <div className="d-flex">
+                <div className="form-floating mb-3 w-50">
+                   <input type="text" className="form-control" onChange={formik.handleChange} onBlur={formik.handleBlur} name='name'  placeholder="Name"/>
+                   <label className="text-primary">Name :</label>
+                     {formik.touched.name && <b>{formik.errors.name}</b>}   
+                </div>&nbsp;
+                <div className="form-floating w-50">
+                   <input type="text" class="form-control" onChange={formik.handleChange} onBlur={formik.handleBlur} name='num' placeholder="Number" />
+                   <label className="text-primary">Number :</label>
+                    {formik.touched.num && <b>{formik.errors.num}</b>}
+                </div>
+                </div>
+                <div className="form-floating w-50">
+                  <input type="text"  class="form-control" onChange={formik.handleChange} onBlur={formik.handleBlur} name='email' placeholder="Email"/>
+                  <label className="text-primary">Email :</label>
+                     {formik.touched.email && <b>{formik.errors.email}</b> }
+                </div>
+            <div className="d-flex justify-content-between w-75 ">
+            <div>
+            <strong className="text-primary">COURSES</strong><br/>
+            <input type='checkbox' value='Frontend with React'  onChange={formik.handleChange} onBlur={formik.handleBlur} name='courses'/>&nbsp;
+            <span className="mt-2">Frontend with React</span><br/>
+            <input type='checkbox' value='Frontend with Angular'onChange={formik.handleChange} onBlur={formik.handleBlur} name='courses'/>&nbsp;
+            <span className="mt-2">Frontend with Angular</span><br/ >
+            <input type='checkbox' value='Full stack JAVA'      onChange={formik.handleChange} onBlur={formik.handleBlur} name='courses'/>&nbsp;
+            <span className="mt-2">Full stack JAVA</span><br/>
+            <input type='checkbox' value='MEAN' onChange={formik.handleChange} onBlur={formik.handleBlur} name='courses'/>&nbsp;
+            <span className="mt-2">MEAN</span><br/>
+            <input type='checkbox' value='MERN' onChange={formik.handleChange} onBlur={formik.handleBlur} name='courses'/>&nbsp;
+            <span className="mt-2">MERN</span><br/>
+            <input type='checkbox' value='Devops' onChange={formik.handleChange} onBlur={formik.handleBlur}  name='courses'/>&nbsp;
+            <span className="mt-2">Devops</span><br/>
+               <div>
+                {formik.touched.courses && <b>{formik.errors.courses}</b>}
+               </div>
+             </div>
+             </div>
 
-            <input type="text" placeholder="Phone Number" class="form-control" {...formik.getFieldProps('num')} />&nbsp;
-            <div>{formik.touched.num && formik.errors.num}</div>
-
-            <input type="text" placeholder="Email" class="form-control" {...formik.getFieldProps('email')}/>&nbsp;
-            <div>{formik.touched.email && formik.errors.email}</div>
-          
-            <h4>COURSE</h4>
-            <div>{formik.touched.course && formik.errors.course}</div>
-            <input type='checkbox'name='course' onChange={formik.handleChange} onBlur={formik.handleBlur}/>&nbsp;
-            <label> Frontend with angular</label><br/>
-           
-            <input type='checkbox' name='course' onChange={formik.handleChange} onBlur={formik.handleBlur}/>&nbsp;
-            <label>Frontend with react</label><br/>
-            
-            <input type='checkbox' name='course' onChange={formik.handleChange} onBlur={formik.handleBlur}/>&nbsp;
-            <label>Full stack JAVA</label><br/>
-           
-            <input type='checkbox' name='course' onChange={formik.handleChange} onBlur={formik.handleBlur}/>&nbsp;
-            <label>MEAN</label><br/>
-          
-            <input type='checkbox' name='course' onChange={formik.handleChange} onBlur={formik.handleBlur}/>&nbsp;
-            <label>MERN</label><br/>
-          
-            <input type='checkbox' name='course' onChange={formik.handleChange} onBlur={formik.handleBlur}/>&nbsp;
-            <label>Devops</label>
-
-           <div id='radio'>
-           <h4>MODE</h4>
-            <input type='radio' name='mode' />&nbsp;
-            <label>Offline</label><br/>
-
-            <input type='radio' name='mode'/>&nbsp;
-            <label>Online</label>
-            </div> 
-            </form>
-            </div>
-         
-          <div className="feed">
-            <h1>FEEDBACK</h1>&nbsp;&nbsp;
-            <form onSubmit={formik.handleSubmit}>
-            <input type='date' name='date'/>&nbsp;&nbsp;
-
-            <select>
-                <option selected disabled >Choose an option</option>
-                <option value='int' name='opt1'>Interested</option>
-                <option value='int' name='opt2'>Not Interested</option>
-            </select><br/><br/>
-            
-            <textarea name="remarks">Remarks</textarea><br/><br/>
-            <input type='date' name='calldate'/>
-            <button id="btn" type="submit">Save</button>
-
-            <button id="btnenq">All Enquiries</button>
-            </form>
-          
-          
+           <div>
+           <strong className="text-primary">MODE</strong><br />
+            <input type='radio' name='mode' onChange={formik.handleChange} onBlur={formik.handleBlur} />&nbsp;
+            <span>Offline</span><br />
+            <input type='radio' name='mode' onChange={formik.handleChange} onBlur={formik.handleBlur} />&nbsp;
+            <span>Online</span><br />
+                <div>
+                  {formik.touched.mode && <b>{formik.errors.mode}</b>}
+                </div>
+           </div>
           </div>
-    </div>
-   
-    )  }
+     </div>
+            
+  <div className="rightside">
+      <h1 className="text-center p-4 text-primary">FEED BACK</h1>
+
+        <div className="d-flex">
+          <div className="form-floating w-50">
+            <input type="date" className="form-control" onChange={formik.handleChange} onBlur={formik.handleBlur} name="date" placeholder="date"/>
+            <label className="text-primary">Date :</label>
+            {formik.touched.date && <b>{formik.errors.date}</b>}
+          </div>&nbsp;
+                            
+          <div className="form-floating w-50 mb-3">
+            <select className="form-control" onChange={formik.handleChange} onBlur={formik.handleBlur} name="int" placeholder='options'>
+            <option name='options' onChange={formik.handleChange} onBlur={formik.handleBlur}>Choose a option</option>  
+            <option name='options' onChange={formik.handleChange} onBlur={formik.handleBlur}>Interested</option>  
+            <option name='options' onChange={formik.handleChange} onBlur={formik.handleBlur}>Not Interested</option>  
+            </select>
+            <label className="text-primary">Interest</label>
+            {formik.touched.options && <b>{formik.errors.options}</b>}
+           </div>
+        </div>
+
+          <div className="form-floating mb-3">
+             <input type="text" className="form-control" onChange={formik.handleChange} onBlur={formik.handleBlur} name="remarks" placeholder="remarks"/>
+             <label className="text-primary">Remarks :</label>
+            {formik.touched.remarks && <b>{formik.errors.remarks}</b>}
+          </div>
+          <div className="form-floating">
+          <input type="date" className="form-control" onChange={formik.handleChange} onBlur={formik.handleBlur} name="ncd" placeholder="nxt call date"/>
+          <label className="text-primary">Next Call Date :</label>
+          {formik.touched.ncd && <b>{formik.errors.ncd}</b>}
+          </div>
+  </div>            
+          <div className="btn1">
+            <button className="btn btn-primary w-25 p-3">Save</button>
+          </div>
+</form>   
+</div>
+    )}  
   
 export default Form
