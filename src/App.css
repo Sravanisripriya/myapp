@@ -1,9 +1,9 @@
 label , strong , h1{
     font-weight: 600;
   }
-  .btn1{
-    margin-left: 42%;
-  }
+   .btn1{
+    margin-left: 42%; 
+  } 
   .fromMainDiv{
     background-color: rgb(246, 244, 244);
     height: 92vh;
@@ -11,6 +11,13 @@ label , strong , h1{
   .leftside , .rightside{
     width: 47%;
   }
-  b{
-    color:red;
-  }
+ .btn2{
+  position:absolute;
+  top:0;
+  right:0;
+ }
+
+ 
+b{
+  color: rgb(239, 47, 47);
+}

@@ -5,7 +5,7 @@ import * as Yup from 'yup'
 
 function Form(){
     let formik=useFormik({
-   initialvalues:{
+   initialValues:{
     name:'',
     num:'',
     email:'',
@@ -27,14 +27,13 @@ function Form(){
     options:Yup.string().required(),
     ncd:Yup.string().required(),
    }),
-   onSubmit:(values)=>{
-    console.log(values)}  
+   onSubmit:(values)=>{console.log(values)}  
     })
 
     return (
   <div className="main">
   <form  onSubmit={formik.handleSubmit}> 
-      <div className="enq">
+      <div className=" d-flex justify-content-between p-5" >
       <div className="leftside">
               <h1 className="text-center p-4 text-primary">ENQUIRY FORM</h1>
                <div className="d-flex">
@@ -52,22 +51,22 @@ function Form(){
                 <div className="form-floating w-50">
                   <input type="text"  class="form-control" onChange={formik.handleChange} onBlur={formik.handleBlur} name='email' placeholder="Email"/>
                   <label className="text-primary">Email :</label>
-                     {formik.touched.email && <b>{formik.errors.email}</b> }
+                     {formik.touched.email && <b>{formik.errors.email}</b> }&nbsp;
                 </div>
             <div className="d-flex justify-content-between w-75 ">
             <div>
             <strong className="text-primary">COURSES</strong><br/>
-            <input type='checkbox' value='Frontend with React'  onChange={formik.handleChange} onBlur={formik.handleBlur} name='courses'/>&nbsp;
+            <input type='checkbox' value='course1'  onChange={formik.handleChange} onBlur={formik.handleBlur} name='courses'/>&nbsp;
             <span className="mt-2">Frontend with React</span><br/>
-            <input type='checkbox' value='Frontend with Angular'onChange={formik.handleChange} onBlur={formik.handleBlur} name='courses'/>&nbsp;
+            <input type='checkbox' value='course1'onChange={formik.handleChange} onBlur={formik.handleBlur} name='courses'/>&nbsp;
             <span className="mt-2">Frontend with Angular</span><br/ >
-            <input type='checkbox' value='Full stack JAVA'      onChange={formik.handleChange} onBlur={formik.handleBlur} name='courses'/>&nbsp;
+            <input type='checkbox' value='course1'      onChange={formik.handleChange} onBlur={formik.handleBlur} name='courses'/>&nbsp;
             <span className="mt-2">Full stack JAVA</span><br/>
-            <input type='checkbox' value='MEAN' onChange={formik.handleChange} onBlur={formik.handleBlur} name='courses'/>&nbsp;
+            <input type='checkbox' value='course1' onChange={formik.handleChange} onBlur={formik.handleBlur} name='courses'/>&nbsp;
             <span className="mt-2">MEAN</span><br/>
-            <input type='checkbox' value='MERN' onChange={formik.handleChange} onBlur={formik.handleBlur} name='courses'/>&nbsp;
+            <input type='checkbox' value='course1' onChange={formik.handleChange} onBlur={formik.handleBlur} name='courses'/>&nbsp;
             <span className="mt-2">MERN</span><br/>
-            <input type='checkbox' value='Devops' onChange={formik.handleChange} onBlur={formik.handleBlur}  name='courses'/>&nbsp;
+            <input type='checkbox' value='course1' onChange={formik.handleChange} onBlur={formik.handleBlur}  name='courses'/>&nbsp;
             <span className="mt-2">Devops</span><br/>
                <div>
                 {formik.touched.courses && <b>{formik.errors.courses}</b>}
@@ -86,7 +85,7 @@ function Form(){
                 </div>
            </div>
           </div>
-     </div>
+   
             
   <div className="rightside">
       <h1 className="text-center p-4 text-primary">FEED BACK</h1>
@@ -118,6 +117,7 @@ function Form(){
           <input type="date" className="form-control" onChange={formik.handleChange} onBlur={formik.handleBlur} name="ncd" placeholder="nxt call date"/>
           <label className="text-primary">Next Call Date :</label>
           {formik.touched.ncd && <b>{formik.errors.ncd}</b>}
+          </div>
           </div>
   </div>            
           <div className="btn1">
