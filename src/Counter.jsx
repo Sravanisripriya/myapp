@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 function Counter(props){
-//   console.log(props)  shows counter data
+//    console.log(props)  shows counter data
  return(
     <div>
         <h1>Counter:{props.counter.count}</h1>
@@ -14,4 +14,4 @@ function Counter(props){
  )
 }
 export default connect(function(store){return store})(Counter)
-// export default  Connect(store=>store)(Counter)
+// export default  connect(store=>store)(Counter)
