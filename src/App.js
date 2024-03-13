@@ -8,7 +8,7 @@ import Countries from './components/Countries';
 import React from 'react';
 
 function App() {
-  
+ 
   return (
     <Provider store={store}>
     <div className='style'>

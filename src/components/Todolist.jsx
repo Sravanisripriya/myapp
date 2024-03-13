@@ -1,28 +1,28 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Addtodo,Deltodo } from "../store/actions";
+import { addTodo,deleteTodo } from "../store/actions";
  
 function Todolist(Props){
     const [task,setTask]=React.useState('')
-    function add(){
+    function addTask(){
         // Props.dispatch({type:'ADD',payload:task})
-        Props.dispatch(Addtodo(task))
-    }
-    function del(i){
+        Props.dispatch(addTodo(task))
+    } 
+    function deleteTask(i){
         // Props.dispatch({type:'DEL',payload:i})
-        Props.dispatch(Deltodo(i))
+        Props.dispatch(deleteTodo(i))
     }
    
     return(
         <div className="style">
         <h1>TODOLIST</h1>
         <input type='text' onChange={(e)=>{setTask(e.target.value)}}/>
-        <button onClick={add}>Add</button>
+        <button onClick={addTask}>Add</button>
        
         {
             Props.todo.todos.map((t,i)=>{
                 return <li key={i}>{t} 
-                 <button onClick={()=>{del(i)}}>Del</button>
+                 <button onClick={()=>{deleteTask(i)}}>Del</button>
                  </li>
             })
         }
