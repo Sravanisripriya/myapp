@@ -31,7 +31,7 @@ import { connect } from "react-redux";
         <div>
             <h1>TODOLIST</h1>
              <input type='text' onKeyUp={props.handleNewtodo}/>
-             <button onClick={props.addTodo}>Addtodo</button>
+             <button onClick={props.addTodo}>AddTodo</button>
             <ul>
                 {
                 props.todos && props.todos.map((t,i)=>{
@@ -48,8 +48,9 @@ import { connect } from "react-redux";
 // rerender avvakundha
 function mapStateToProps(state){return state.todolist}
 function mapDispatchToProps(dispatch){return{
-    handleNewtodo:(e)=>{dispatch({type:'UPDATENEWTODO',payload:e.target.value})},
-    addTodo:()=>{dispatch(addTodo())},
-    deleteTodo:(ind)=>{dispatch({type:'DELETETODO',index:ind})}         }}
+    handleNewtodo:(e)=>{dispatch(updateNewTodo(e.target.value))},
+   addTodo:()=>{dispatch(addTodo())},
+    deleteTodo:(ind)=>{dispatch(deleteTodo(ind))}
+ }}
 
-export default connect( mapStateToProps, mapDispatchToProps)(Todolist)
+export default connect(mapStateToProps, mapDispatchToProps)(Todolist)
