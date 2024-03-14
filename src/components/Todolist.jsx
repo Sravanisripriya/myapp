@@ -11,7 +11,7 @@ function Todolist(Props){
     function deleteTask(i){
         // Props.dispatch({type:'DEL',payload:i})
         Props.dispatch(deleteTodo(i))
-    }
+    } 
    
     return(
         <div className="style">
