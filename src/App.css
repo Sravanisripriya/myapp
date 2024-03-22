@@ -1,38 +1,43 @@
-.App {
-  text-align: center;
+.formMainL{
+  width:30%;
+  margin:9% auto
+}
+.formMainR{
+  width:30%;
+  margin:4% auto
+
+}
+.formMainL b{
+  color:rgb(247, 113, 113)
+}
+.formMainR b{
+  color:rgb(247, 113, 113)
+}
+.home-bg-img{
+   /* background-image: url(https://m.media-amazon.com/images/I/71z2-qou6QL._AC_UF1000,1000_QL80_.jpg); */
+   /* background-image: url(https://rest.edit.site/filestorage-api-service/d8953c23ff98ff0536c1e53baa3d17a9/slide-image2.jpg); */
+  background-image: url(https://www.wallpapertip.com/wmimgs/26-269503_thumb-image-beauty-and-cosmetic-background.jpg);
+  background-repeat: no-repeat;
+  width: 100%;
+  height:90vh;
+  background-size: cover;
+}
+.login-bg{
+  /* background-image:url(https://img-b.udemycdn.com/course/750x422/3737758_d022.jpg); */
+  background-image: url(https://images.squarespace-cdn.com/content/v1/5c5860375239585370eecbb6/1549301850260-OCMLXLJKW2K5R9BSYCWW/Image.jpg) ;
+  width:100%;
+  height:90vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top:-9%;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Nlink b{
+  color:white;
+  font-size: 20px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#caption{
+   font-size: 100px;
+   padding:100px 100px
 }
