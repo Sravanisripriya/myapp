@@ -1,6 +1,6 @@
 import React from "react";
 import { useFormik } from "formik";
-import * as  Yup from 'yup'
+
 
 function checkForm(values){                  
 // console.log("checkForm::",values)         
