@@ -6,23 +6,23 @@ function Products(){
  const [products, setProducts] = useState([])
  const [cart, setCart]=useState([])
 useEffect(()=>{
-    axios.get("https://fakestoreapi.com/products").then((res)=>{setProducts(res.data)})
+    axios.get('https://dummyjson.com/carts').then((res)=>{setProducts([...res.data])})
 },[])
   function addtocart(p){
-    setCart([...cart, {...p}])
+    setCart([...cart, {...p}])}
 
-    function isproductinCart(product){
-        var X =cart.find(function(cp){
-            if(cp===product.title){return true}
+    function isproductinCart(p){
+        var X = cart.find(function(cp){
+            if(cp.title===p.title){return true}
             else {return false}
         })
-    }
+    
     return X
-  }
+}
 return(
   <div className=' d-flex flex-wrap border border-3  border-danger p-2 w-100'>
        {/* <h1>PRODUCTS</h1> */}
-     <div className="w-75">
+     <div className="w-50">
        {products.length>0 && products.map((p)=>{
         return <li className="d-flex">
             <img src={p.image} width="100px" alt=''/>
@@ -41,7 +41,7 @@ return(
         </li>
        })}
      </div>
-    <div className="w-25">
+    <div className="w-50">
        <Cart cart={cart}></Cart>
     </div>
        
