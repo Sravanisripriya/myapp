@@ -1,0 +1,35 @@
+
+
+.P-List{
+    list-style: none;
+}
+.P-item img{
+    width:110px;
+    padding:20px
+}
+.P-item{
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+.P-title{
+    width:40%
+}
+.P-Price{
+    text-align:left;
+    width: 10%;
+}
+.P-item button {
+ margin:10px;
+ border-radius:25%;
+
+}
+.PQ-total{
+    width:10%;
+    text-align:right;
+}
+.P-total{
+    text-align: right;
+    width:70%
+}
